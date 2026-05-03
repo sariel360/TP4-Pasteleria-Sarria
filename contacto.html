@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — Dulce Arte Pastelería</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+
+  <header>
+    <!-- Logo como enlace — imagen/ícono que vuelve al inicio (Req. TP4) -->
+    <a href="index.html" class="logo-link" title="Dulce Arte — Volver al inicio">
+      <span class="logo-icon">🎂</span>
+      <div class="logo-texto">
+        <h1>Dulce Arte</h1>
+        <p>Pastelería artesanal · Tortas a pedido</p>
+      </div>
+    </a>
+    <div class="header-contacto">
+      <div>📍 Córdoba, Argentina</div>
+      <!-- Ruta absoluta externa + nueva pestaña -->
+      <div>📱 <a href="https://wa.me/5493512000000" target="_blank" rel="noopener">+54 9 351 200-0000</a></div>
+      <div>📸 <a href="https://www.instagram.com" target="_blank" rel="noopener">@dulcearte.cba</a></div>
+    </div>
+  </header>
+
+  <!-- Menú global consistente — .activo en "Contacto" para indicar ubicación -->
+  <nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="catalogo.html">🎂 Catálogo</a>
+    <a href="galeria.html">📸 Galería</a>
+    <a href="pedido.html">✏️ Hacer Pedido</a>
+    <a href="contacto.html" class="activo">📬 Contacto</a>
+  </nav>
+
+  <main>
+
+    <div class="seccion-titulo">
+      <h2>📬 Contacto</h2>
+      <p>¿Tenés alguna pregunta o querés hablar de tu torta? ¡Escribinos por cualquiera de estos medios!</p>
+    </div>
+
+    <div class="contacto-grid">
+
+      <!-- INFO DE CONTACTO -->
+      <div class="contacto-info card-simple">
+        <h3>📍 Cómo encontrarnos</h3>
+
+        <div class="contacto-dato">
+          <span class="icono">📱</span>
+          <div>
+            <strong>WhatsApp</strong><br />
+            <!--
+              RUTA ABSOLUTA externa + nueva pestaña (Req. TP4)
+              Abre WhatsApp con mensaje predefinido
+            -->
+            <a href="https://wa.me/5493512000000?text=Hola%21+Quiero+consultar+por+una+torta"
+               target="_blank" rel="noopener">
+              +54 9 351 200-0000
+            </a>
+          </div>
+        </div>
+
+        <div class="contacto-dato">
+          <span class="icono">✉️</span>
+          <div>
+            <strong>Email</strong><br />
+            <!--
+              ENLACE MAILTO (Req. TP4) — con subject y body predefinidos
+              para facilitar el contacto al usuario (principio Krug)
+            -->
+            <a href="mailto:dulcearte@gmail.com?subject=Consulta%20sobre%20torta&body=Hola%2C%20me%20gustar%C3%ADa%20consultar%20sobre...">
+              dulcearte@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div class="contacto-dato">
+          <span class="icono">📸</span>
+          <div>
+            <strong>Instagram</strong><br />
+            <!-- Ruta absoluta externa + nueva pestaña -->
+            <a href="https://www.instagram.com" target="_blank" rel="noopener">@dulcearte.cba</a>
+          </div>
+        </div>
+
+        <div class="contacto-dato">
+          <span class="icono">👍</span>
+          <div>
+            <strong>Facebook</strong><br />
+            <!-- Ruta absoluta externa + nueva pestaña -->
+            <a href="https://www.facebook.com" target="_blank" rel="noopener">Dulce Arte Pastelería</a>
+          </div>
+        </div>
+
+        <div class="contacto-dato">
+          <span class="icono">📍</span>
+          <div>
+            <strong>Ubicación</strong><br />
+            Córdoba Capital, Argentina<br />
+            <small style="color:#7a6060;">(Retiro y entrega a domicilio coordinados)</small>
+          </div>
+        </div>
+
+        <br />
+        <h3>🕐 Horarios de atención</h3>
+        <p style="color:#7a6060; font-size:0.95rem; line-height:1.8;">
+          Lunes a Viernes: 9:00 a 20:00 hs<br />
+          Sábados: 9:00 a 14:00 hs<br />
+          Domingos: Solo por WhatsApp
+        </p>
+
+        <br />
+
+        <!-- Botones de contacto rápido (simulación de botón con <a>) -->
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <!--
+            SIMULACIÓN DE BOTÓN CON ENLACE (Req. TP4):
+            .btn + .btn-whatsapp aplican display:inline-block,
+            padding, background-color, text-decoration:none
+          -->
+          <a href="https://wa.me/5493512000000?text=Hola%21+Quiero+consultar+por+una+torta"
+             target="_blank" rel="noopener" class="btn btn-whatsapp" style="text-align:center;">
+            💬 Escribir por WhatsApp
+          </a>
+
+          <!--
+            ENLACE MAILTO (Req. TP4) — estilizado como botón
+          -->
+          <a href="mailto:dulcearte@gmail.com?subject=Consulta%20sobre%20torta&body=Hola%2C%20me%20gustar%C3%ADa%20consultar%20sobre..."
+             class="btn btn-outline" style="text-align:center;">
+            ✉️ Enviar email
+          </a>
+        </div>
+      </div>
+
+      <!-- PREGUNTAS FRECUENTES -->
+      <div class="card-simple">
+        <h3 style="color:#e91e8c; margin-bottom:20px;">❓ Preguntas frecuentes</h3>
+
+        <h3 style="font-size:1rem; color:#3a2a2a; margin-bottom:6px;">
+          ¿Con cuánta anticipación debo hacer el pedido?
+        </h3>
+        <p style="color:#7a6060; font-size:0.9rem; margin-bottom:18px; line-height:1.6;">
+          Necesitamos <strong>mínimo 5 días hábiles</strong> de anticipación para garantizar
+          la calidad y dedicación que cada torta merece.
+        </p>
+
+        <h3 style="font-size:1rem; color:#3a2a2a; margin-bottom:6px;">
+          ¿Hacen entrega a domicilio?
+        </h3>
+        <p style="color:#7a6060; font-size:0.9rem; margin-bottom:18px; line-height:1.6;">
+          Sí, coordinamos la entrega según la dirección y el horario. El costo de envío
+          se acuerda por WhatsApp según la zona.
+        </p>
+
+        <h3 style="font-size:1rem; color:#3a2a2a; margin-bottom:6px;">
+          ¿Puedo ver fotos de tortas anteriores?
+        </h3>
+        <p style="color:#7a6060; font-size:0.9rem; margin-bottom:18px; line-height:1.6;">
+          ¡Claro! Podés ver nuestra
+          <!-- Ruta relativa interna -->
+          <a href="galeria.html">galería completa de trabajos</a>
+          o seguirnos en
+          <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+          para ver las creaciones más recientes.
+        </p>
+
+        <h3 style="font-size:1rem; color:#3a2a2a; margin-bottom:6px;">
+          ¿Cómo sé que mi pedido fue confirmado?
+        </h3>
+        <p style="color:#7a6060; font-size:0.9rem; margin-bottom:18px; line-height:1.6;">
+          El pedido se confirma cuando recibís nuestra respuesta por WhatsApp con el
+          presupuesto final y la confirmación de la fecha.
+        </p>
+
+        <h3 style="font-size:1rem; color:#3a2a2a; margin-bottom:6px;">
+          ¿Aceptan tortas de bodas y eventos grandes?
+        </h3>
+        <p style="color:#7a6060; font-size:0.9rem; margin-bottom:6px; line-height:1.6;">
+          Sí, pero los eventos grandes se coordinan con mayor anticipación.
+          Consultanos directamente para presupuesto personalizado.
+        </p>
+        <a href="pedido.html" class="btn btn-rosa" style="font-size:0.88rem; padding:9px 20px;">
+          ✏️ Hacer mi pedido
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-redes">
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">📸</a>
+      <a href="https://wa.me/5493512000000" target="_blank" rel="noopener">💬</a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener">👍</a>
+    </div>
+    <p>
+      🎂 <strong>Dulce Arte Pastelería</strong> &mdash; Córdoba, Argentina<br />
+      <!-- ENLACE MAILTO en el footer (Req. TP4) -->
+      <a href="mailto:dulcearte@gmail.com">dulcearte@gmail.com</a> &mdash;
+      <a href="contacto.html">Formulario de contacto</a><br />
+      &copy; 2026 Dulce Arte. Hecho con 💖
+    </p>
+  </footer>
+
+  <script src="js/pedidos.js"></script>
+</body>
+</html>

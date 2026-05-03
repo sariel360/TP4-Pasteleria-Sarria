@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galería — Dulce Arte Pastelería</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo-link" title="Dulce Arte — Volver al inicio">
+      <span class="logo-icon">🎂</span>
+      <div class="logo-texto">
+        <h1>Dulce Arte</h1>
+        <p>Pastelería artesanal · Tortas a pedido</p>
+      </div>
+    </a>
+    <div class="header-contacto">
+      <div>📍 Córdoba, Argentina</div>
+      <div>📱 <a href="https://wa.me/5493512000000" target="_blank" rel="noopener">+54 9 351 200-0000</a></div>
+      <div>📸 <a href="https://www.instagram.com" target="_blank" rel="noopener">@dulcearte.cba</a></div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="catalogo.html">🎂 Catálogo</a>
+    <a href="galeria.html" class="activo">📸 Galería</a>
+    <a href="pedido.html">✏️ Hacer Pedido</a>
+    <a href="contacto.html">📬 Contacto</a>
+  </nav>
+
+  <main>
+
+    <div class="seccion-titulo">
+      <h2>📸 Galería de Tortas</h2>
+      <p>Trabajos reales de Dulce Arte. Hacé click en cualquier foto para verla en grande.</p>
+    </div>
+
+    <div class="filtros">
+      <button class="filtro-btn activo" data-filtro="todo">Todas</button>
+      <button class="filtro-btn" data-filtro="chocolate">Chocolate</button>
+      <button class="filtro-btn" data-filtro="fondant">Fondant</button>
+      <button class="filtro-btn" data-filtro="cumpleanos">Cumpleaños</button>
+      <button class="filtro-btn" data-filtro="boda">Bodas</button>
+      <button class="filtro-btn" data-filtro="naked">Naked Cake</button>
+      <button class="filtro-btn" data-filtro="multipisos">Multipisos</button>
+    </div>
+
+    <div class="galeria-grid">
+
+      <div class="galeria-item" data-categorias="cumpleanos fondant">
+        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=500&q=80"
+             alt="Torta de cumpleaños rosa con macarons — Mayo 2025"
+             title="Cumpleaños Rosa · Mayo 2025" />
+        <div class="overlay">🎂 Cumpleaños Rosa · Mayo 2025</div>
+      </div>
+
+      <div class="galeria-item" data-categorias="boda multipisos">
+        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=500&q=80"
+             alt="Torta de bodas tres pisos con flores blancas — Marzo 2025"
+             title="Boda · Tres pisos · Marzo 2025" />
+        <div class="overlay">💍 Boda · Tres pisos · Marzo 2025</div>
+      </div>
+
+      <div class="galeria-item" data-categorias="chocolate">
+        <img src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=500&q=80"
+             alt="Torta de chocolate con frambuesas — Abril 2025"
+             title="Chocolate y Frambuesas · Abril 2025" />
+        <div class="overlay">🍫 Chocolate y Frambuesas · Abril 2025</div>
+      </div>
+
+      <div class="galeria-item" data-categorias="naked">
+        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&q=80"
+             alt="Naked cake con flores naturales — Febrero 2025"
+             title="Naked Cake · Flores naturales · Feb 2025" />
+        <div class="overlay">🌸 Naked Cake · Flores naturales · Feb 2025</div>
+      </div>
+
+      <div class="galeria-item" data-categorias="chocolate fondant">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&q=80"
+             alt="Torta de chocolate espejo — Enero 2025"
+             title="Chocolate espejo · Enero 2025" />
+        <div class="overlay">🍫 Chocolate espejo · Enero 2025</div>
+      </div>
+
+      <div class="galeria-item" data-categorias="cumpleanos fondant">
+        <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=500&q=80"
+             alt="Torta temática jardín — Junio 2025"
+             title="Temática Jardín · Junio 2025" />
+        <div class="overlay">🌺 Temática Jardín · Junio 2025</div>
+      </div>
+
+      <div class="galeria-item" data-categorias="cumpleanos">
+        <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&q=80"
+             alt="Torta de frutillas y crema — Julio 2025"
+             title="Frutillas y Crema · Julio 2025" />
+        <div class="overlay">🍓 Frutillas y Crema · Julio 2025</div>
+      </div>
+
+      <div class="galeria-item" data-categorias="boda multipisos fondant">
+        <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=500&q=80"
+             alt="Torta de bodas blanca con detalles dorados — Agosto 2025"
+             title="Boda Dorada · Agosto 2025" />
+        <div class="overlay">💫 Boda Dorada · Agosto 2025</div>
+      </div>
+
+      <div class="galeria-item" data-categorias="cumpleanos fondant">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80"
+             alt="Torta infantil temática — Septiembre 2025"
+             title="Temática Infantil · Sept 2025" />
+        <div class="overlay">🎉 Temática Infantil · Sept 2025</div>
+      </div>
+
+      <div class="galeria-item" data-categorias="chocolate naked">
+        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&q=80"
+             alt="Torta de chocolate con decoración dorada — Octubre 2025"
+             title="Chocolate Dorado · Oct 2025" />
+        <div class="overlay">✨ Chocolate Dorado · Oct 2025</div>
+      </div>
+
+      <div class="galeria-item" data-categorias="multipisos fondant boda">
+        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=500&q=80"
+             alt="Torta dos pisos con rosas en buttercream — Noviembre 2025"
+             title="Dos pisos · Rosas · Nov 2025" />
+        <div class="overlay">🌹 Dos pisos · Rosas · Nov 2025</div>
+      </div>
+
+      <div class="galeria-item" data-categorias="cumpleanos fondant">
+        <img src="https://images.unsplash.com/photo-1567171466295-4afa63d45416?w=500&q=80"
+             alt="Torta de cumpleaños colorida — Diciembre 2025"
+             title="Cumpleaños Colorida · Dic 2025" />
+        <div class="overlay">🎊 Cumpleaños Colorida · Dic 2025</div>
+      </div>
+
+    </div>
+
+    <br /><br />
+    <div style="text-align:center;">
+      <p style="color:#7a6060; margin-bottom:16px;">¿Te gustó alguna? ¡Podemos hacerla para vos!</p>
+      <a href="pedido.html" class="btn btn-rosa">✏️ Hacer mi pedido</a>
+      &nbsp;&nbsp;
+      <!-- Ruta absoluta externa + nueva pestaña -->
+      <a href="https://www.instagram.com" target="_blank" rel="noopener" class="btn btn-outline">
+        📸 Ver más en Instagram
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-cerrar" id="lightbox-cerrar">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev">&#8249;</button>
+    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next">&#8250;</button>
+  </div>
+
+  <footer>
+    <div class="footer-redes">
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">📸</a>
+      <a href="https://wa.me/5493512000000" target="_blank" rel="noopener">💬</a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener">👍</a>
+    </div>
+    <p>🎂 <strong>Dulce Arte Pastelería</strong> &mdash; Córdoba, Argentina<br />
+    <a href="mailto:dulcearte@gmail.com">dulcearte@gmail.com</a> &mdash;
+    <a href="contacto.html">Formulario de contacto</a><br />
+    &copy; 2026 Dulce Arte. Hecho con 💖</p>
+  </footer>
+
+  <script src="js/pedidos.js"></script>
+</body>
+</html>

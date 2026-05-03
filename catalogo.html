@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo — Dulce Arte Pastelería</title>
+  <!-- Ruta relativa al CSS (mismo nivel que index.html) -->
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+
+  <header>
+    <!-- Logo como enlace — vuelve al inicio (Req. TP4) -->
+    <a href="index.html" class="logo-link" title="Dulce Arte — Volver al inicio">
+      <span class="logo-icon">🎂</span>
+      <div class="logo-texto">
+        <h1>Dulce Arte</h1>
+        <p>Pastelería artesanal · Tortas a pedido</p>
+      </div>
+    </a>
+    <div class="header-contacto">
+      <div>📍 Córdoba, Argentina</div>
+      <div>📱 <a href="https://wa.me/5493512000000" target="_blank" rel="noopener">+54 9 351 200-0000</a></div>
+      <div>📸 <a href="https://www.instagram.com" target="_blank" rel="noopener">@dulcearte.cba</a></div>
+    </div>
+  </header>
+
+  <!-- Menú global — .activo indica la página actual (principio Krug) -->
+  <nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="catalogo.html" class="activo">🎂 Catálogo</a>
+    <a href="galeria.html">📸 Galería</a>
+    <a href="pedido.html">✏️ Hacer Pedido</a>
+    <a href="contacto.html">📬 Contacto</a>
+  </nav>
+
+  <main>
+
+    <div class="seccion-titulo">
+      <h2>🎂 Catálogo de Tortas</h2>
+      <p>Explorá todos nuestros estilos y elegí tu favorita. Cada torta se personaliza a tu gusto.</p>
+    </div>
+
+    <!-- Filtros por categoría (JS) -->
+    <div class="filtros">
+      <button class="filtro-btn activo" data-filtro="todo">Todas</button>
+      <button class="filtro-btn" data-filtro="clasica">Clásicas</button>
+      <button class="filtro-btn" data-filtro="chocolate">Chocolate</button>
+      <button class="filtro-btn" data-filtro="frutillas">Con Frutas</button>
+      <button class="filtro-btn" data-filtro="decorada">Decoradas</button>
+      <button class="filtro-btn" data-filtro="especial">Especiales</button>
+      <button class="filtro-btn" data-filtro="multipisos">Multipisos</button>
+    </div>
+
+    <div class="catalogo-grid">
+
+      <div class="torta-card" data-categorias="chocolate clasica">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&q=80"
+             alt="Torta de chocolate con ganache" title="Chocolate Premium" width="500"/>
+        <div class="torta-card-info">
+          <h3>Chocolate Premium</h3>
+          <span class="tag">Chocolate</span><span class="tag">Clásica</span>
+          <p>Bizcocho húmedo de cacao, relleno de ganache y cobertura de chocolate espejo.</p>
+          <div class="precio">Desde $14.000</div>
+          <a href="pedido.html" class="btn btn-rosa">Personalizar y pedir</a>
+        </div>
+      </div>
+
+      <div class="torta-card" data-categorias="frutillas clasica">
+        <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&q=80"
+             alt="Torta de frutillas y crema" title="Frutillas y Crema" width="500"/>
+        <div class="torta-card-info">
+          <h3>Frutillas y Crema</h3>
+          <span class="tag">Frutillas</span><span class="tag">Clásica</span>
+          <p>Capas de bizcochuelo vainilla, crema chantilly y frutillas frescas de temporada.</p>
+          <div class="precio">Desde $14.500</div>
+          <a href="pedido.html" class="btn btn-rosa">Personalizar y pedir</a>
+        </div>
+      </div>
+
+      <div class="torta-card" data-categorias="decorada especial">
+        <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=500&q=80"
+             alt="Torta temática con fondant" title="Temática Decorada" width="500"/>
+        <div class="torta-card-info">
+          <h3>Temática Decorada</h3>
+          <span class="tag">Fondant</span><span class="tag">Especial</span>
+          <p>Diseño personalizado con flores y figuras en fondant artesanal.</p>
+          <div class="precio">Desde $20.000</div>
+          <a href="pedido.html" class="btn btn-rosa">Personalizar y pedir</a>
+        </div>
+      </div>
+
+      <div class="torta-card" data-categorias="multipisos especial decorada">
+        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=500&q=80"
+             alt="Torta de tres pisos con flores blancas" title="Multipisos Elegante" width="500"/>
+        <div class="torta-card-info">
+          <h3>Multipisos Elegante</h3>
+          <span class="tag">Multipisos</span><span class="tag">Especial</span>
+          <p>Torta de 2 o 3 pisos con flores naturales o en buttercream. Ideal para bodas.</p>
+          <div class="precio">Desde $33.000</div>
+          <a href="pedido.html" class="btn btn-rosa">Personalizar y pedir</a>
+        </div>
+      </div>
+
+      <div class="torta-card" data-categorias="clasica">
+        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&q=80"
+             alt="Naked cake con flores frescas" title="Naked Cake" width="500"/>
+        <div class="torta-card-info">
+          <h3>Naked Cake</h3>
+          <span class="tag">Clásica</span><span class="tag">Tendencia</span>
+          <p>Estilo rústico sin cobertura que muestra las capas naturales, decorado con flores.</p>
+          <div class="precio">Desde $16.000</div>
+          <a href="pedido.html" class="btn btn-rosa">Personalizar y pedir</a>
+        </div>
+      </div>
+
+      <div class="torta-card" data-categorias="chocolate frutillas decorada">
+        <img src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=500&q=80"
+             alt="Torta de chocolate con frambuesas" title="Chocolate y Frambuesas" width="500"/>
+        <div class="torta-card-info">
+          <h3>Chocolate y Frambuesas</h3>
+          <span class="tag">Chocolate</span><span class="tag">Frutas</span>
+          <p>Intenso bizcocho de chocolate con mousse y frambuesas frescas sobre ganache.</p>
+          <div class="precio">Desde $15.500</div>
+          <a href="pedido.html" class="btn btn-rosa">Personalizar y pedir</a>
+        </div>
+      </div>
+
+      <div class="torta-card" data-categorias="decorada especial">
+        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=500&q=80"
+             alt="Torta de cumpleaños rosa con macarons" title="Cumpleaños Candy" width="500"/>
+        <div class="torta-card-info">
+          <h3>Cumpleaños Candy</h3>
+          <span class="tag">Decorada</span><span class="tag">Cumpleaños</span>
+          <p>Esponjosa torta rosa con buttercream, macarons, sprinkles y detalles personalizados.</p>
+          <div class="precio">Desde $18.000</div>
+          <a href="pedido.html" class="btn btn-rosa">Personalizar y pedir</a>
+        </div>
+      </div>
+
+      <div class="torta-card" data-categorias="especial multipisos">
+        <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=500&q=80"
+             alt="Torta de bodas blanca con detalles dorados" title="Torta de Bodas" width="500"/>
+        <div class="torta-card-info">
+          <h3>Torta de Bodas</h3>
+          <span class="tag">Boda</span><span class="tag">Multipisos</span>
+          <p>Fondant blanco, detalles dorados y flores naturales. Presupuesto a consultar.</p>
+          <div class="precio">A consultar</div>
+          <!-- Enlace externo a WhatsApp — ruta absoluta + nueva pestaña -->
+          <a href="https://wa.me/5493512000000?text=Hola%21+Quiero+consultar+por+una+torta+de+bodas"
+             target="_blank" rel="noopener" class="btn btn-whatsapp" style="font-size:0.85rem; padding:9px 16px;">
+            💬 Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <br /><br />
+    <div style="text-align:center;">
+      <p style="color:#7a6060; margin-bottom:16px;">
+        ¿No encontrás lo que buscás? ¡Contanos tu idea y lo hacemos realidad!
+      </p>
+      <!-- Enlace externo — ruta absoluta + nueva pestaña (Req. TP4) -->
+      <a href="https://wa.me/5493512000000?text=Hola%21+Tengo+una+idea+para+una+torta+personalizada"
+         target="_blank" rel="noopener" class="btn btn-whatsapp">
+        💬 Consultar idea personalizada
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-redes">
+      <a href="https://www.instagram.com" target="_blank" rel="noopener" title="Instagram">📸</a>
+      <a href="https://wa.me/5493512000000" target="_blank" rel="noopener" title="WhatsApp">💬</a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener" title="Facebook">👍</a>
+    </div>
+    <p>🎂 <strong>Dulce Arte Pastelería</strong> &mdash; Córdoba, Argentina<br />
+    <a href="mailto:dulcearte@gmail.com">dulcearte@gmail.com</a> &mdash;
+    <a href="contacto.html">Formulario de contacto</a><br />
+    &copy; 2026 Dulce Arte. Hecho con 💖</p>
+  </footer>
+
+  <script src="js/pedidos.js"></script>
+</body>
+</html>

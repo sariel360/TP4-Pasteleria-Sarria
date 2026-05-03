@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hacer Pedido — Dulce Arte Pastelería</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo-link" title="Dulce Arte — Volver al inicio">
+      <span class="logo-icon">🎂</span>
+      <div class="logo-texto">
+        <h1>Dulce Arte</h1>
+        <p>Pastelería artesanal · Tortas a pedido</p>
+      </div>
+    </a>
+    <div class="header-contacto">
+      <div>📍 Córdoba, Argentina</div>
+      <div>📱 <a href="https://wa.me/5493512000000" target="_blank" rel="noopener">+54 9 351 200-0000</a></div>
+      <div>📸 <a href="https://www.instagram.com" target="_blank" rel="noopener">@dulcearte.cba</a></div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="catalogo.html">🎂 Catálogo</a>
+    <a href="galeria.html">📸 Galería</a>
+    <a href="pedido.html" class="activo">✏️ Hacer Pedido</a>
+    <a href="contacto.html">📬 Contacto</a>
+  </nav>
+
+  <main>
+
+    <div class="seccion-titulo">
+      <h2>✏️ Hacer mi Pedido</h2>
+      <p>Completá el formulario y tu pedido llega directo a nuestro WhatsApp. ¡Fácil y rápido!</p>
+    </div>
+
+    <div class="pedido-wrapper">
+
+      <!-- FORMULARIO PRINCIPAL -->
+      <div>
+        <form id="form-pedido" onsubmit="return false;">
+
+          <!-- DATOS DEL CLIENTE -->
+          <div class="form-card">
+            <h3>👤 Tus datos</h3>
+            <div class="campos-dobles">
+              <div class="campo-grupo" id="grupo-nombre">
+                <label for="nombre-cliente">Nombre completo <sup style="color:#c62828;">*</sup></label>
+                <input type="text" id="nombre-cliente" name="nombre-cliente"
+                       placeholder="Ej: María González" autocomplete="name" />
+                <span class="campo-error">Ingresá tu nombre (mínimo 2 caracteres).</span>
+              </div>
+              <div class="campo-grupo" id="grupo-telefono">
+                <label for="telefono">Teléfono / WhatsApp <sup style="color:#c62828;">*</sup></label>
+                <input type="tel" id="telefono" name="telefono"
+                       placeholder="Ej: 351 200-0000" autocomplete="tel" />
+                <span class="campo-error">Ingresá un teléfono válido.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAMAÑO -->
+          <div class="form-card">
+            <h3>📏 Tamaño de la torta</h3>
+            <div class="opciones-tamanio" id="grupo-tamanio">
+              <label>
+                <input type="radio" name="tamanio" value="pequena" />
+                <span class="tamanio-box">
+                  <span class="tam-icon">🍰</span>
+                  <span class="tam-nombre">Pequeña</span>
+                  <span class="tam-porciones">Hasta 10 porciones</span>
+                  <span class="tam-precio">$8.500</span>
+                </span>
+              </label>
+              <label>
+                <input type="radio" name="tamanio" value="mediana" />
+                <span class="tamanio-box">
+                  <span class="tam-icon">🎂</span>
+                  <span class="tam-nombre">Mediana</span>
+                  <span class="tam-porciones">Hasta 20 porciones</span>
+                  <span class="tam-precio">$14.000</span>
+                </span>
+              </label>
+              <label>
+                <input type="radio" name="tamanio" value="grande" />
+                <span class="tamanio-box">
+                  <span class="tam-icon">🎊</span>
+                  <span class="tam-nombre">Grande</span>
+                  <span class="tam-porciones">Hasta 35 porciones</span>
+                  <span class="tam-precio">$20.000</span>
+                </span>
+              </label>
+              <label>
+                <input type="radio" name="tamanio" value="especial" />
+                <span class="tamanio-box">
+                  <span class="tam-icon">👑</span>
+                  <span class="tam-nombre">Especial</span>
+                  <span class="tam-porciones">Más de 35</span>
+                  <span class="tam-precio">$28.000</span>
+                </span>
+              </label>
+            </div>
+            <br />
+            <div class="campo-grupo">
+              <label for="pisos">Número de pisos</label>
+              <select id="pisos" name="pisos">
+                <option value="1">1 piso (incluido)</option>
+                <option value="2">2 pisos (+$5.000)</option>
+                <option value="3">3 pisos (+$12.000)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- SABOR Y RELLENO -->
+          <div class="form-card">
+            <h3>🍰 Sabor y relleno</h3>
+            <div class="campos-dobles">
+              <div class="campo-grupo" id="grupo-sabor">
+                <label for="sabor">Sabor de la masa <sup style="color:#c62828;">*</sup></label>
+                <select id="sabor" name="sabor">
+                  <option value="">-- Elegí el sabor --</option>
+                  <option value="vainilla">Vainilla clásica</option>
+                  <option value="chocolate">Chocolate</option>
+                  <option value="limon">Limón</option>
+                  <option value="zanahoria">Zanahoria</option>
+                  <option value="red-velvet">Red Velvet</option>
+                  <option value="margarita">Mármol (vainilla y chocolate)</option>
+                  <option value="banana">Banana</option>
+                  <option value="coco">Coco</option>
+                </select>
+                <span class="campo-error">Elegí el sabor de la masa.</span>
+              </div>
+              <div class="campo-grupo" id="grupo-relleno">
+                <label for="relleno">Relleno <sup style="color:#c62828;">*</sup></label>
+                <select id="relleno" name="relleno">
+                  <option value="">-- Elegí el relleno --</option>
+                  <option value="dulce-leche">Dulce de leche</option>
+                  <option value="chocolate">Ganache de chocolate</option>
+                  <option value="vainilla-crema">Crema pastelera de vainilla</option>
+                  <option value="frutillas">Crema y frutillas (+$500)</option>
+                  <option value="limon">Crema de limón (+$500)</option>
+                  <option value="nutella">Nutella (+$800)</option>
+                  <option value="cheesecake">Cheesecake (+$800)</option>
+                  <option value="tiramisú">Tiramisú (+$1.000)</option>
+                </select>
+                <span class="campo-error">Elegí el relleno.</span>
+              </div>
+            </div>
+            <div class="campo-grupo" id="grupo-cobertura">
+              <label for="cobertura">Cobertura / terminación <sup style="color:#c62828;">*</sup></label>
+              <select id="cobertura" name="cobertura">
+                <option value="">-- Elegí la cobertura --</option>
+                <option value="fondant">Fondant liso (+$1.500) — Ideal para decoraciones temáticas</option>
+                <option value="buttercream">Buttercream (+$800) — Suave y decorativa</option>
+                <option value="ganache">Ganache de chocolate (+$1.000)</option>
+                <option value="merengue">Merengue suizo (+$600) — Clásico y elegante</option>
+                <option value="chocolate-espejo">Chocolate espejo (+$1.200)</option>
+              </select>
+              <span class="campo-error">Elegí la cobertura.</span>
+            </div>
+          </div>
+
+          <!-- DECORACIÓN -->
+          <div class="form-card">
+            <h3>✨ Decoración y detalles</h3>
+            <div class="campo-grupo">
+              <label for="decoracion">Decoración deseada</label>
+              <input type="text" id="decoracion" name="decoracion"
+                     placeholder="Ej: flores rosas, lazo dorado, figuras de unicornio..." />
+            </div>
+            <div class="campo-grupo">
+              <label for="mensaje-torta">Mensaje en la torta (opcional)</label>
+              <input type="text" id="mensaje-torta" name="mensaje-torta"
+                     placeholder="Ej: ¡Feliz cumpleaños Sofi! 🎉" maxlength="50" />
+            </div>
+            <div class="campo-grupo">
+              <label for="observaciones">Observaciones adicionales</label>
+              <textarea id="observaciones" name="observaciones"
+                        placeholder="Alergias, colores específicos, referencias, etc."></textarea>
+            </div>
+          </div>
+
+          <!-- FECHA -->
+          <div class="form-card">
+            <h3>📅 Fecha de entrega</h3>
+            <div class="aviso-info">
+              ⏰ <strong>Importante:</strong> Los pedidos necesitan <strong>mínimo 5 días de anticipación</strong>.
+              Máximo <strong>2 tortas por día</strong>.
+            </div>
+            <div class="campo-grupo" id="grupo-fecha-entrega">
+              <label for="fecha-entrega">Fecha en que necesitás la torta <sup style="color:#c62828;">*</sup></label>
+              <input type="date" id="fecha-entrega" name="fecha-entrega" />
+              <span class="campo-error">Elegí una fecha válida.</span>
+            </div>
+            <div id="disponibilidad-aviso" class="disponibilidad-aviso vacio">
+              Elegí una fecha para ver la disponibilidad.
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- RESUMEN -->
+      <div>
+        <div class="resumen-card">
+          <h3>🧾 Resumen del pedido</h3>
+          <div class="resumen-linea"><span class="etiqueta">👤 Cliente</span><span class="valor" id="res-nombre">—</span></div>
+          <div class="resumen-linea"><span class="etiqueta">📏 Tamaño</span><span class="valor" id="res-tamanio">—</span></div>
+          <div class="resumen-linea"><span class="etiqueta">🔢 Pisos</span><span class="valor" id="res-pisos">—</span></div>
+          <div class="resumen-linea"><span class="etiqueta">🍰 Masa</span><span class="valor" id="res-sabor">—</span></div>
+          <div class="resumen-linea"><span class="etiqueta">🍮 Relleno</span><span class="valor" id="res-relleno">—</span></div>
+          <div class="resumen-linea"><span class="etiqueta">🎨 Cobertura</span><span class="valor" id="res-cobertura">—</span></div>
+          <div class="resumen-linea"><span class="etiqueta">✨ Decoración</span><span class="valor" id="res-decoracion">—</span></div>
+          <div class="resumen-linea"><span class="etiqueta">💬 Mensaje</span><span class="valor" id="res-mensaje">—</span></div>
+          <div class="resumen-linea"><span class="etiqueta">📅 Fecha</span><span class="valor" id="res-fecha">—</span></div>
+          <div class="resumen-total">
+            <span>💰 Total estimado</span>
+            <span id="res-total">—</span>
+          </div>
+          <p style="font-size:0.76rem; color:#7a6060; margin-top:9px; text-align:center; line-height:1.5;">
+            * El precio final se confirma por WhatsApp según la decoración.
+          </p>
+          <br />
+          <!--
+            BOTÓN SIMULADO CON ENLACE — el <button> también actúa con
+            display:block + padding + background en el CSS (.btn-whatsapp)
+          -->
+          <button id="btn-enviar-pedido" class="btn btn-whatsapp" style="width:100%; font-size:1rem;" disabled>
+            💬 Enviar pedido por WhatsApp
+          </button>
+          <p style="font-size:0.78rem; color:#7a6060; text-align:center; margin-top:9px;">
+            Se abre WhatsApp con todos los detalles listos para enviar.
+          </p>
+        </div>
+
+        <!-- Ver catálogo para inspirarse -->
+        <div class="card-simple" style="margin-top:18px; text-align:center;">
+          <p style="font-size:0.9rem; color:#7a6060; margin-bottom:12px;">
+            ¿Necesitás inspiración? Mirá nuestro catálogo.
+          </p>
+          <!-- Ruta relativa interna -->
+          <a href="catalogo.html" class="btn btn-outline" style="font-size:0.9rem;">🎂 Ver catálogo</a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Modal éxito -->
+  <div id="modal-exito" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-icon">🎉</div>
+      <h3>¡Pedido enviado!</h3>
+      <p>
+        Tu pedido fue enviado a nuestro WhatsApp.
+        <strong>Vamos a confirmarlo a la brevedad.</strong><br /><br />
+        El pedido queda confirmado una vez que recibas nuestra respuesta.
+      </p>
+      <button id="modal-cerrar" class="btn btn-rosa" style="width:100%;">¡Perfecto, gracias!</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-redes">
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">📸</a>
+      <a href="https://wa.me/5493512000000" target="_blank" rel="noopener">💬</a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener">👍</a>
+    </div>
+    <p>🎂 <strong>Dulce Arte Pastelería</strong> &mdash; Córdoba, Argentina<br />
+    <a href="mailto:dulcearte@gmail.com">dulcearte@gmail.com</a> &mdash;
+    <a href="contacto.html">Formulario de contacto</a><br />
+    &copy; 2026 Dulce Arte. Hecho con 💖</p>
+  </footer>
+
+  <script src="js/pedidos.js"></script>
+</body>
+</html>

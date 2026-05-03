@@ -1,0 +1,907 @@
+/* =====================================================
+   Dulce Arte Pastelería — TP4: Navegación y UX
+   Laboratorio de Programación - 6° G
+   =====================================================
+
+   PALETA DE COLORES (armónica, base rosa pastel):
+   --rosa-fuerte:  #c2185b   (énfasis, activos)
+   --rosa:         #e91e8c   (principal)
+   --rosa-claro:   #fce4f0   (fondos suaves)
+   --dorado:       #c9963a   (precios, detalles)
+   --crema:        #fff8f0   (fondo general)
+   --texto:        #3a2a2a   (texto principal)
+   --texto-suave:  #7a6060   (texto secundario)
+   ===================================================== */
+
+/* ── RESET ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── VARIABLES CSS ── */
+:root {
+  --rosa-fuerte: #c2185b;
+  --rosa:        #e91e8c;
+  --rosa-hover:  #ad1457;
+  --rosa-claro:  #fce4f0;
+  --dorado:      #c9963a;
+  --crema:       #fff8f0;
+  --gris-suave:  #f5f5f5;
+  --texto:       #3a2a2a;
+  --texto-suave: #7a6060;
+  --sombra:      0 4px 18px rgba(233, 30, 140, 0.12);
+}
+
+/* ── BODY ── */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  /* Color con hexadecimal */
+  background-color: #fff8f0;
+  color: #3a2a2a;
+  line-height: 1.6;
+}
+
+/* ==============================================
+   ESTADOS DE LOS ENLACES — Requisito TP4
+   Se definen TODOS los pseudo-selectores:
+   :link, :visited, :hover, :active
+   ============================================== */
+
+/* Estado :link — enlace no visitado */
+a:link {
+  color: #e91e8c;
+  text-decoration: underline;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Estado :visited — enlace ya visitado */
+a:visited {
+  /* Color con RGB — ligeramente más apagado para indicar "ya visitado" */
+  color: rgb(150, 30, 100);
+  text-decoration: underline;
+}
+
+/* Estado :hover — al pasar el mouse encima (feedback visual claro) */
+a:hover {
+  /* Color con HSL */
+  color: hsl(330, 80%, 35%);
+  text-decoration: none;
+  /* Fondo suave con RGBA — "ilumina" el link al pasar */
+  background-color: rgba(233, 30, 140, 0.08);
+  border-radius: 3px;
+}
+
+/* Estado :active — al hacer clic */
+a:active {
+  color: #7b0037;
+  text-decoration: none;
+}
+
+/* ── HEADER ── */
+header {
+  /* Gradiente con hexadecimales */
+  background: linear-gradient(135deg, #e91e8c 0%, #ad1457 100%);
+  color: white;
+  padding: 18px 36px;
+  display: flex;                /* Flexbox: logo a la izquierda, contacto a la derecha */
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* Logo como enlace — resetea los colores del <a> dentro del header */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;         /* Sin subrayado en el logo */
+  color: white;                  /* Sobreescribe el color :link global */
+}
+
+.logo-link:link,
+.logo-link:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.logo-link:hover {
+  color: #ffe0f0;
+  background-color: transparent;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.logo-link:active {
+  color: #ffc0d8;
+  background-color: transparent;
+}
+
+.logo-icon {
+  font-size: 2.6rem;
+}
+
+.logo-texto h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo-texto p {
+  font-size: 0.85rem;
+  /* Color con RGBA */
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Contacto en el header */
+.header-contacto {
+  text-align: right;
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+/* Links dentro del header contacto */
+.header-contacto a:link,
+.header-contacto a:visited {
+  color: #ffe0f0;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.header-contacto a:hover {
+  color: white;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+/* ── NAVEGACIÓN ── */
+nav {
+  background-color: #ad1457;
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Links del menú — sobrescriben los estilos globales de <a> */
+nav a:link,
+nav a:visited {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 13px 18px;
+  display: inline-block;
+  font-size: 0.95rem;
+  border-bottom: 3px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Feedback visual en hover del menú — el usuario sabe que es clickeable */
+nav a:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.18);
+  border-radius: 0;
+  text-decoration: none;
+}
+
+nav a:active {
+  background-color: rgba(255, 255, 255, 0.35);
+  color: white;
+}
+
+/* "Usted está aquí" — Principio de Krug */
+nav a.activo {
+  border-bottom: 3px solid #ffe0f0;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ── CONTENIDO PRINCIPAL ── */
+main {
+  max-width: 1160px;
+  margin: 0 auto;
+  /* Margin shorthand: top right bottom left */
+  padding: 36px 24px 60px;
+}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, #fce4f0 0%, #fff8f0 100%);
+  padding: 56px 36px;
+  text-align: center;
+  border-bottom: 2px solid #f8bbd9;
+  margin-bottom: 0;
+}
+
+.hero h2 {
+  font-size: 2.3rem;
+  color: #e91e8c;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: #7a6060;
+  max-width: 540px;
+  margin: 0 auto 28px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==============================================
+   SIMULACIÓN DE BOTONES CON ENLACES — Req. TP4
+   display: inline-block + padding + background
+   + text-decoration: none
+   ============================================== */
+.btn {
+  display: inline-block;          /* Permite padding/margin como bloque */
+  padding: 11px 28px;             /* Espacio interior (box model) */
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.96rem;
+  font-weight: 600;
+  text-decoration: none;          /* Elimina el subrayado de enlace */
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+/* Botón rosa principal */
+.btn-rosa:link,
+.btn-rosa:visited {
+  background-color: #e91e8c;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(233, 30, 140, 0.30);
+}
+
+.btn-rosa:hover {
+  background-color: #ad1457;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(233, 30, 140, 0.40);
+  background-image: none;        /* Anula el fondo RGBA del hover global */
+}
+
+.btn-rosa:active {
+  background-color: #7b0037;
+  color: white;
+  text-decoration: none;
+  transform: translateY(0);
+}
+
+/* Botón contorno */
+.btn-outline:link,
+.btn-outline:visited {
+  background-color: white;
+  color: #e91e8c;
+  border: 2px solid #e91e8c;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background-color: #fce4f0;
+  color: #ad1457;
+  text-decoration: none;
+}
+
+.btn-outline:active {
+  background-color: #f8bbd9;
+  color: #7b0037;
+  text-decoration: none;
+}
+
+/* Botón WhatsApp */
+.btn-whatsapp:link,
+.btn-whatsapp:visited {
+  background-color: #25d366;
+  color: white;
+  text-decoration: none;
+  padding: 13px 30px;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.30);
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp:active {
+  background-color: #17a84d;
+  color: white;
+  text-decoration: none;
+}
+
+/* ── SECCIÓN TÍTULO ── */
+.seccion-titulo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.seccion-titulo h2 {
+  font-size: 1.85rem;
+  /* Color con HSL */
+  color: hsl(327, 82%, 43%);
+  margin-bottom: 8px;
+}
+
+.seccion-titulo p {
+  color: #7a6060;
+  font-size: 0.98rem;
+}
+
+/* ── CARDS DEL CATÁLOGO ── */
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.torta-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  border: 1px solid #fce4f0;
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+
+.torta-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(233, 30, 140, 0.20);
+}
+
+.torta-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.torta-card-info {
+  padding: 16px 18px;
+}
+
+.torta-card-info h3 {
+  color: #3a2a2a;
+  font-size: 1.08rem;
+  margin-bottom: 7px;
+}
+
+.tag {
+  display: inline-block;
+  background: #fce4f0;
+  color: #e91e8c;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-right: 4px;
+  margin-bottom: 8px;
+}
+
+.torta-card-info p {
+  font-size: 0.87rem;
+  color: #7a6060;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.precio {
+  font-size: 1.12rem;
+  font-weight: 700;
+  /* Color con RGB */
+  color: rgb(201, 150, 58);
+  margin-bottom: 12px;
+}
+
+/* ── FILTROS ── */
+.filtros {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.filtro-btn {
+  padding: 7px 18px;
+  border-radius: 20px;
+  border: 2px solid #e91e8c;
+  background: white;
+  color: #e91e8c;
+  cursor: pointer;
+  font-size: 0.87rem;
+  font-weight: 600;
+  transition: all 0.18s;
+  font-family: inherit;
+}
+
+.filtro-btn:hover,
+.filtro-btn.activo {
+  background: #e91e8c;
+  color: white;
+}
+
+/* ── GALERÍA ── */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+.galeria-item {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s;
+}
+
+.galeria-item:hover {
+  transform: scale(1.03);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.galeria-item .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(233, 30, 140, 0.55);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s;
+  padding: 10px;
+  text-align: center;
+}
+
+.galeria-item:hover .overlay {
+  opacity: 1;
+}
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.90);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.lightbox.activo {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 76vh;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  color: white;
+  margin-top: 14px;
+  font-size: 0.98rem;
+  text-align: center;
+}
+
+.lightbox-cerrar {
+  position: absolute;
+  top: 18px;
+  right: 26px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.6rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.30);
+}
+
+.lightbox-prev { left: 14px; }
+.lightbox-next { right: 14px; }
+
+/* ── FORMULARIO DE PEDIDO ── */
+.pedido-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 370px;
+  gap: 30px;
+  align-items: start;
+}
+
+.form-card {
+  background: white;
+  border-radius: 16px;
+  /* Box model: padding + border */
+  padding: 28px 30px;
+  border: 1px solid #fce4f0;
+  box-shadow: var(--sombra);
+  margin-bottom: 22px;
+}
+
+.form-card h3 {
+  color: #e91e8c;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #fce4f0;
+}
+
+.campo-grupo {
+  margin-bottom: 16px;
+}
+
+.campo-grupo label {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #5a3a4a;
+  margin-bottom: 6px;
+}
+
+.campo-grupo input,
+.campo-grupo select,
+.campo-grupo textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #f0d0e0;
+  border-radius: 10px;
+  font-size: 0.96rem;
+  font-family: inherit;
+  color: #3a2a2a;
+  background: #fffafc;
+  transition: border-color 0.2s;
+}
+
+.campo-grupo input:focus,
+.campo-grupo select:focus,
+.campo-grupo textarea:focus {
+  outline: none;
+  border-color: #e91e8c;
+  background: white;
+}
+
+.campo-grupo textarea {
+  resize: vertical;
+  min-height: 78px;
+}
+
+.campos-dobles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Tamaños radio */
+.opciones-tamanio {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.opciones-tamanio input[type="radio"] { display: none; }
+
+.tamanio-box {
+  border: 2px solid #f0d0e0;
+  border-radius: 10px;
+  padding: 12px 6px;
+  text-align: center;
+  background: #fffafc;
+  transition: all 0.18s;
+  display: block;
+  font-size: 0.83rem;
+  cursor: pointer;
+}
+
+.tamanio-box .tam-icon    { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+.tamanio-box .tam-nombre  { font-weight: 700; display: block; color: #3a2a2a; }
+.tamanio-box .tam-porciones { font-size: 0.72rem; color: #7a6060; }
+.tamanio-box .tam-precio  { font-size: 0.82rem; font-weight: 700; color: #c9963a; margin-top: 4px; display: block; }
+
+.opciones-tamanio input[type="radio"]:checked + .tamanio-box {
+  border-color: #e91e8c;
+  background: #fce4f0;
+}
+
+/* Resumen del pedido */
+.resumen-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  border: 2px solid #fce4f0;
+  box-shadow: var(--sombra);
+  position: sticky;
+  top: 20px;
+}
+
+.resumen-card h3 {
+  color: #e91e8c;
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.resumen-linea {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 0;
+  border-bottom: 1px dashed #f0d0e0;
+  font-size: 0.88rem;
+}
+
+.resumen-linea:last-of-type { border-bottom: none; }
+.resumen-linea .etiqueta { color: #7a6060; }
+.resumen-linea .valor { font-weight: 600; color: #3a2a2a; text-align: right; max-width: 175px; }
+
+.resumen-total {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 2px solid #fce4f0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e91e8c;
+}
+
+.disponibilidad-aviso {
+  margin-top: 12px;
+  padding: 9px 13px;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  text-align: center;
+}
+
+.disponibilidad-aviso.ok    { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+.disponibilidad-aviso.lleno { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
+.disponibilidad-aviso.vacio { background: #fff8e1; color: #f57f17; border: 1px solid #ffe082; }
+
+/* Errores de validación */
+.campo-error {
+  color: #c62828;
+  font-size: 0.78rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.campo-grupo.error input,
+.campo-grupo.error select { border-color: #c62828; }
+.campo-grupo.error .campo-error { display: block; }
+
+/* ── MODAL ÉXITO ── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.activo { display: flex; }
+
+.modal-box {
+  background: white;
+  border-radius: 20px;
+  padding: 38px 34px;
+  max-width: 460px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+.modal-box .modal-icon { font-size: 3.2rem; margin-bottom: 14px; }
+.modal-box h3 { color: #e91e8c; font-size: 1.5rem; margin-bottom: 10px; }
+.modal-box p  { color: #7a6060; line-height: 1.6; margin-bottom: 20px; }
+
+/* ── SOBRE NOSOTRAS ── */
+.nosotras-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.nosotras-texto h3 { color: #e91e8c; font-size: 1.45rem; margin-bottom: 14px; }
+.nosotras-texto p  { color: #7a6060; line-height: 1.7; margin-bottom: 12px; }
+
+.nosotras-img {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(233, 30, 140, 0.18);
+}
+
+.nosotras-img img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── CONTACTO ── */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.contacto-info h3 { color: #e91e8c; margin-bottom: 16px; font-size: 1.2rem; }
+
+/* Links de contacto — sobreescriben globales con estilos específicos */
+.contacto-info a:link {
+  color: #c2185b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contacto-info a:visited {
+  color: #880e4f;
+  text-decoration: none;
+}
+
+.contacto-info a:hover {
+  color: #e91e8c;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.contacto-info a:active {
+  color: #c2185b;
+  text-decoration: underline;
+}
+
+.contacto-dato {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 0.96rem;
+}
+
+.contacto-dato .icono { font-size: 1.3rem; margin-top: 2px; }
+
+/* ── CARDS GENERALES ── */
+.card-simple {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  border: 1px solid #fce4f0;
+  box-shadow: var(--sombra);
+}
+
+/* ── PASO A PASO INICIO ── */
+.pasos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin-bottom: 44px;
+}
+
+.paso-card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px 18px;
+  text-align: center;
+  border: 1px solid #fce4f0;
+  box-shadow: var(--sombra);
+}
+
+.paso-card .paso-num { font-size: 2rem; margin-bottom: 8px; }
+.paso-card h3       { color: #e91e8c; margin-bottom: 8px; font-size: 1rem; }
+.paso-card p        { font-size: 0.86rem; color: #7a6060; }
+
+/* ── FOOTER ── */
+footer {
+  background: linear-gradient(135deg, #880e4f 0%, #ad1457 100%);
+  color: rgba(255, 255, 255, 0.88);
+  text-align: center;
+  padding: 30px 24px;
+  font-size: 0.87rem;
+  line-height: 1.9;
+}
+
+.footer-redes {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+}
+
+/* Links del footer */
+footer a:link,
+footer a:visited {
+  color: #ffe0f0;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+footer a:hover {
+  color: white;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+footer a:active {
+  color: #ffb0d0;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* ── ALERTA / INFO ── */
+.aviso-info {
+  background: rgba(233, 30, 140, 0.07);
+  border-left: 4px solid #e91e8c;
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.88rem;
+  margin-bottom: 14px;
+  color: #5a3a4a;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .pedido-wrapper    { grid-template-columns: 1fr; }
+  .nosotras-grid     { grid-template-columns: 1fr; }
+  .contacto-grid     { grid-template-columns: 1fr; }
+  .opciones-tamanio  { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  header              { flex-direction: column; gap: 10px; text-align: center; }
+  .header-contacto    { text-align: center; }
+  nav                 { flex-wrap: wrap; padding: 0 8px; }
+  .hero               { padding: 36px 18px; }
+  .hero h2            { font-size: 1.7rem; }
+  main                { padding: 22px 14px 50px; }
+  .campos-dobles      { grid-template-columns: 1fr; }
+}

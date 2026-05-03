@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dulce Arte Pastelería — Tortas artesanales a pedido</title>
+
+  <!--
+    RUTA RELATIVA al CSS (desde la raíz del proyecto):
+    index.html está en la raíz, css/estilos.css en la carpeta css/
+    Por eso la ruta es css/estilos.css (sin ../ porque estamos en el mismo nivel)
+  -->
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       HEADER — Logo como enlace (Req. TP4)
+       El logo entero (ícono + texto) es un
+       <a> que vuelve al inicio: imagen como link
+       ══════════════════════════════════════ -->
+  <header>
+    <!-- IMAGEN COMO ENLACE: el logo completo es un link que vuelve a index.html -->
+    <a href="index.html" class="logo-link" title="Dulce Arte — Volver al inicio">
+      <span class="logo-icon">🎂</span>
+      <div class="logo-texto">
+        <h1>Dulce Arte</h1>
+        <p>Pastelería artesanal · Tortas a pedido</p>
+      </div>
+    </a>
+
+    <div class="header-contacto">
+      <div>📍 Córdoba, Argentina</div>
+      <!-- RUTA ABSOLUTA a WhatsApp: enlace externo que abre en nueva pestaña -->
+      <div>📱 <a href="https://wa.me/5493512000000" target="_blank" rel="noopener">+54 9 351 200-0000</a></div>
+      <!-- RUTA ABSOLUTA a Instagram: red social en nueva pestaña -->
+      <div>📸 <a href="https://www.instagram.com" target="_blank" rel="noopener">@dulcearte.cba</a></div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════
+       NAV — Menú global consistente en
+       todas las páginas. La clase .activo
+       indica "Usted está aquí" (Krug)
+       ══════════════════════════════════════ -->
+  <nav>
+    <!-- RUTA RELATIVA interna — mismo nivel de carpeta -->
+    <a href="index.html" class="activo">🏠 Inicio</a>
+    <a href="catalogo.html">🎂 Catálogo</a>
+    <a href="galeria.html">📸 Galería</a>
+    <a href="pedido.html">✏️ Hacer Pedido</a>
+    <a href="contacto.html">📬 Contacto</a>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <div class="hero">
+    <h2>🎂 Tortas únicas, hechas con amor</h2>
+    <p>
+      Cada torta es una obra artesanal creada especialmente para vos.
+      Elegís el sabor, tamaño, relleno y decoración ideal para tu celebración.
+    </p>
+    <div class="hero-btns">
+      <!--
+        SIMULACIÓN DE BOTÓN con enlace (Req. TP4):
+        display:inline-block + padding + background-color
+        + text-decoration:none → definidos en estilos.css (.btn .btn-rosa)
+      -->
+      <a href="pedido.html" class="btn btn-rosa">✏️ Hacer mi pedido</a>
+      <a href="catalogo.html" class="btn btn-outline">🎂 Ver catálogo</a>
+      <a href="galeria.html" class="btn btn-outline">📸 Ver galería</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ══ TORTAS DESTACADAS ══ -->
+    <div class="seccion-titulo">
+      <h2>Tortas más pedidas</h2>
+      <p>Las favoritas de nuestras clientas, elaboradas con ingredientes de primera calidad.</p>
+    </div>
+
+    <div class="catalogo-grid">
+
+      <div class="torta-card" data-categorias="chocolate clasica">
+        <img
+          src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&q=80"
+          alt="Torta de chocolate con ganache"
+          title="Torta Chocolate Premium"
+          width="500"
+        />
+        <div class="torta-card-info">
+          <h3>Chocolate Premium</h3>
+          <span class="tag">Chocolate</span>
+          <span class="tag">Clásica</span>
+          <p>Bizcocho húmedo de cacao con relleno de ganache y cobertura de chocolate espejo.</p>
+          <div class="precio">Desde $14.000</div>
+          <!-- Enlace-botón interno con ruta relativa -->
+          <a href="pedido.html" class="btn btn-rosa">Pedir ahora</a>
+        </div>
+      </div>
+
+      <div class="torta-card" data-categorias="frutillas clasica">
+        <img
+          src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&q=80"
+          alt="Torta de frutillas y crema chantilly"
+          title="Torta Frutillas y Crema"
+          width="500"
+        />
+        <div class="torta-card-info">
+          <h3>Frutillas y Crema</h3>
+          <span class="tag">Frutillas</span>
+          <span class="tag">Clásica</span>
+          <p>Capas de bizcochuelo vainilla, crema chantilly y frutillas frescas de temporada.</p>
+          <div class="precio">Desde $14.500</div>
+          <a href="pedido.html" class="btn btn-rosa">Pedir ahora</a>
+        </div>
+      </div>
+
+      <div class="torta-card" data-categorias="decorada especial">
+        <img
+          src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=500&q=80"
+          alt="Torta temática decorada con fondant"
+          title="Torta Temática Decorada"
+          width="500"
+        />
+        <div class="torta-card-info">
+          <h3>Temática Decorada</h3>
+          <span class="tag">Fondant</span>
+          <span class="tag">Especial</span>
+          <p>Diseño completamente personalizado con flores y figuras en fondant artesanal.</p>
+          <div class="precio">Desde $20.000</div>
+          <a href="pedido.html" class="btn btn-rosa">Pedir ahora</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══ CÓMO FUNCIONA ══ -->
+    <div class="seccion-titulo">
+      <h2>¿Cómo hacer tu pedido?</h2>
+      <p>Simple y rápido, en 4 pasos.</p>
+    </div>
+
+    <div class="pasos-grid">
+      <div class="paso-card">
+        <div class="paso-num">1️⃣</div>
+        <h3>Explorás el catálogo</h3>
+        <p>Navegá y encontrá el estilo de torta que más te guste.</p>
+      </div>
+      <div class="paso-card">
+        <div class="paso-num">2️⃣</div>
+        <h3>Personalizás</h3>
+        <p>Elegís sabor, tamaño, relleno, cobertura y decoración.</p>
+      </div>
+      <div class="paso-card">
+        <div class="paso-num">3️⃣</div>
+        <h3>Elegís la fecha</h3>
+        <p>Mínimo 5 días de anticipación. Máximo 2 tortas por día.</p>
+      </div>
+      <div class="paso-card">
+        <div class="paso-num">4️⃣</div>
+        <h3>Confirmás por WhatsApp</h3>
+        <p>Tu pedido llega directo a nuestro WhatsApp con todos los detalles.</p>
+      </div>
+    </div>
+
+    <!-- Mini galería home -->
+    <div class="seccion-titulo">
+      <h2>📸 Trabajos recientes</h2>
+      <p>Una muestra de nuestras creaciones. <a href="galeria.html">Ver galería completa →</a></p>
+    </div>
+
+    <div class="galeria-grid" style="margin-bottom: 32px;">
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=400&q=80"
+             alt="Torta rosa con macarons" />
+        <div class="overlay">Torta rosa con macarons</div>
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400&q=80"
+             alt="Torta tres pisos con flores blancas" />
+        <div class="overlay">Tres pisos con flores</div>
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=400&q=80"
+             alt="Torta de chocolate con frambuesas" />
+        <div class="overlay">Chocolate con frambuesas</div>
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&q=80"
+             alt="Naked cake con flores frescas" />
+        <div class="overlay">Naked cake con flores</div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-bottom: 48px;">
+      <a href="galeria.html" class="btn btn-outline">Ver galería completa →</a>
+    </div>
+
+    <!-- Enlace a fuente externa (Req. TP4: ruta absoluta + nueva pestaña) -->
+    <div class="card-simple" style="text-align:center; padding:28px;">
+      <h3 style="color:#e91e8c; margin-bottom:10px;">¿Querés inspirarte?</h3>
+      <p style="color:#7a6060; margin-bottom:16px;">
+        Visitá nuestro perfil de Instagram o Pinterest para ver más diseños y tendencias en pastelería.
+      </p>
+      <!-- RUTA ABSOLUTA externa que abre en nueva pestaña -->
+      <a href="https://www.pinterest.com/search/pins/?q=tortas%20decoradas" target="_blank" rel="noopener" class="btn btn-outline">
+        🎨 Ver inspiración en Pinterest
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-cerrar" id="lightbox-cerrar">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev">&#8249;</button>
+    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next">&#8250;</button>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-redes">
+      <!-- RUTAS ABSOLUTAS: redes sociales en nueva pestaña -->
+      <a href="https://www.instagram.com" target="_blank" rel="noopener" title="Seguinos en Instagram">📸</a>
+      <a href="https://wa.me/5493512000000" target="_blank" rel="noopener" title="Escribinos por WhatsApp">💬</a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener" title="Seguinos en Facebook">👍</a>
+    </div>
+    <p>
+      🎂 <strong>Dulce Arte Pastelería</strong> &mdash; Córdoba, Argentina<br />
+      <!-- ENLACE MAILTO: contacto por correo electrónico -->
+      <a href="mailto:dulcearte@gmail.com">dulcearte@gmail.com</a> &mdash;
+      <a href="contacto.html">Formulario de contacto</a>
+    </p>
+    <p style="margin-top:8px; opacity:0.7;">&copy; 2026 Dulce Arte. Hecho con 💖</p>
+  </footer>
+
+  <!-- RUTA RELATIVA al JS: desde la raíz hacia js/pedidos.js -->
+  <script src="js/pedidos.js"></script>
+</body>
+</html>
