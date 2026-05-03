@@ -104,4 +104,4 @@ Los botones (`.btn`) usan `display: inline-block` + `padding` + `background-colo
 
 ## GitHub Pages
 
-URL: `https://[tu-usuario].github.io/TP4-pasteleria-dulce-arte/`
+URL: `https://sariel360.github.io/TP4-Pasteleria-Sarria/`
